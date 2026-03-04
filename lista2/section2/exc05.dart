@@ -1,10 +1,13 @@
-void saudar(String nome, {String titulo = 'Sr.', required bool mostrarHora}){
-  if (mostrarHora = true){
-    (DateTime.now());
+void saudar({required String nome, String titulo = 'Sr.', bool mostrarHora = false}) {
+  print('Olá, $titulo $nome!');
+  
+
+  if (mostrarHora) {
+    print('Hora atual: ${DateTime.now()}');
   }
-  return print('Olá ${titulo} ${nome}, ');
 }
 
-void main(){
-  saudar('asas', titulo: 'senhora', mostrarHora:true);
+void main() {
+  saudar(nome: 'João');
+  saudar(nome: 'Maria', titulo: 'Dra.', mostrarHora: true);
 }
