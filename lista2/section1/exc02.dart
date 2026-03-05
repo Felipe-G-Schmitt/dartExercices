@@ -1,10 +1,15 @@
-void main() {
-  const pi = 3.14159;
-  final dataAtual = DateTime.now();
+Future<String> buscarUsuario() {
+  return Future.delayed(Duration(seconds: 2), () => 'Maria Silva');
+}
 
-  print('Data atual: ${dataAtual}');
-  print('Pi: ${pi}');
 
-  //pi = 3.14 //Constant variables can't be assigned a value after initialization
-  //dataAtual = 2026-02-30 20:46:59.362110 //The final variable 'dataAtual' can only be set once.
+void main() async {
+  try {
+    print("Buscando...");
+    String nome = await buscarUsuario();
+    print('$nome');
+    
+  } catch (error) {
+
+  };
 }

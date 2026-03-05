@@ -1,11 +1,13 @@
-var nome = "A";
-var idade = 1;
-var altura = 1.05;
-var gostaProgr = true;
+Future<String> buscarUsuario() {
+  return Future.delayed(Duration(seconds: 2), () => 'Maria Silva');
+}
 
-void main (){
-  print('Tipo: ${nome.runtimeType}');
-  print('Tipo: ${idade.runtimeType}');
-  print('Tipo: ${altura.runtimeType}');
-  print('Tipo: ${gostaProgr.runtimeType}');
+void main() {
+  print("Buscando...");
+  buscarUsuario().then((user) {
+    print('$user');
+  })
+  .catchError((error) {
+    print('Ocorreu o erro: $error');
+  });
 }
